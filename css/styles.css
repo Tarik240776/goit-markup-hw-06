@@ -51,17 +51,28 @@ body {
 }
 
 .container {
-  width: 1158px;
-  padding-left: 15px;
-  padding-right: 15px;
+ 
+  max-width: 320px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin: 0 auto;
 }
-
+@media only screen and (min-width: 768px) {
+   .container{
+    max-width: 768px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding: 0  15px;
+  }
+}
 .header {
   border-bottom: 1px solid #e7e9fc;
   box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
-  background: #fff;
+
 }
 
 .header-logo {
@@ -161,30 +172,38 @@ body {
 
 .hero {
   background: #2e2f42;
-  padding: 188px 0;
+  padding: 72px 0;
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/people-office.jpg);
+    url(../images/people-office-modile.jpg);
   max-width: 1440px;
-  margin: 0 / auto;
+  margin: 0  auto;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
+screen and (min-resolution: 192dpi) and (max-width: 767px),
+screen and (min-resolution: 2dppx) and (max-width: 767px) {
+  .hero {
+    background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/people-office-modile-2x.jpg);
+  }
+}
 
 .hero-title {
   font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   text-align: center;
   color: #fff;
-  max-width: 496px;
+  max-width: 216px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
 }
 
 .hero-btn-main {
@@ -212,49 +231,126 @@ body {
 .hero-btn-main:focus {
   background-color: #404bbf;
 }
+@media only screen and (min-width: 768px) {
+   .hero {
+    padding: 112px 0;
+      background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+            rgba(46, 47, 66, 0.7)),
+          url(../images/people-office-tab.jpg);
+  }
+    @media screen and (min-device-pixel-ratio: 2) and (min-width:768px),
+    screen and (min-resolution: 192dpi) and (min-width:768px),
+    screen and (min-resolution: 2dppx) and (min-width:768px) {
+      .hero {
+        background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+          url(../images/people-office-tab-2x.jpg);
+      }
+    }
+   .hero-title {
+    font-size: 56px;
+    line-height: 1.07;
+    max-width: 496px;
+    margin-bottom: 36px;
+   } 
+}
+@media only screen and (min-width: 1158px) {
+  .hero {
+      padding: 188px 0;
+      background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)),
+        url(../images/people-office.jpg);
+    }
+  
+    @media screen and (min-device-pixel-ratio: 2) and (min-width:1158px),
+    screen and (min-resolution: 192dpi) and (min-width:1158px),
+    screen and (min-resolution: 2dppx) and (min-width:1158px) {
+      .hero {
+        background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+          url(../images/people-office-2x.jpg);
+      }
+    }
+  
+    .hero-title {
+     
+      margin-bottom: 48px;
+    }
+}
 
 .solution {
-  padding-top: 120px;
-  padding-bottom: 120px;
+padding: 96px 0;
 }
 
 .solution-section-list {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 72px;
 }
 
-.solution-section-item {
+/* .solution-section-item {
   width: calc((100% - 3 * 24px) / 4);
-}
+} */
 .solution-box-icon {
   border: 1px solid #8e8f99;
   border-radius: 4px;
   width: 264px;
   height: 112px;
   background-color: #f4f4fd;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   margin-bottom: 8px;
 }
 
 .solution-section-iink {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   color: #2e2f42;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .solution-section-description {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
 }
+@media only screen and (min-width: 768px) {
+   .solution-section-list{
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+  }
+     .solution-section-item {
+       width: calc((100% -  24px) / 2);
+      }
+      .solution-section-iink {
+        text-align: left;
+      }
+}
+@media only screen and (min-width: 1158px) {
+  .solution {
+    padding: 120px 0;
+  }
+  .solution-box-icon {
+    display: flex;
 
+  }
+     .solution-section-item {
+       width: calc((100% - 3 * 24px) / 4);
+     }
+     .solution-section-iink {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.2;
+     }
+     .solution-section-description {
+      font-weight: 400;
+     }
+}
 .team {
   background-color: #f4f4fd;
   padding-top: 120px;
